@@ -1,0 +1,6 @@
+# generated fixtures
+syn_*.jsonl
+# study data lives outside the protocol repo during collection
+study/
+__pycache__/
+*.pyc
