@@ -268,6 +268,7 @@ category. Raw logs published alongside.
 | 2026-09-06 | **D3.** Sizing probe (`intended_size_frac`, `declared_size_cap`) and the rule-drift measurement cut; Q4 narrowed to injection. Rationale: Call A had no source for the fields, and asking the not-trading call for a stake reintroduces the betting frame into the primary measurement. Rule drift gets its own pre-registration. | Yes |
 | 2026-09-06 | Instrument fixes, no protocol change: synthetic "null" fixture was market-plus-noise (strictly worse by construction) and is now independent same-σ noise around truth, with the old construction kept as `worse`; scorer refuses to score any sample containing a retry (exit 3) instead of warning and reporting; parse-failure denominator is every attempt rather than resolved rows only. | Yes |
 | 2026-09-06 | Health invariants promised in §4 / `SUPERVISOR.md` implemented: cold start (needs `study_start.json`, written once by `start_study.py`), clock, full-record schema validation, config pins, forecasts-per-cycle drift, and escalation of any report sustained 3 consecutive health samples to halt. `verify_boundary.sh` added. | Yes |
+| 2026-09-06 | *(after tag `prereg-v1`)* `selection_rule.md` and `retrieval.md` added as **DRAFTS**. Not in force: §3.4's "fixed mechanical rule" and §3.5's pipeline remain unspecified until Jack signs them, which will be a further row and a `prereg-v2` tag. No other file changed. | Yes |
 
 No amendments after the first logged forecast. Any later change ends this
 pre-registration and starts a new one.
