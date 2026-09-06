@@ -1,0 +1,243 @@
+{
+  "stack": "llama",
+  "url": "http://127.0.0.1:18090",
+  "server_models": [
+    {
+      "id": "/usr/share/ollama/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c",
+      "aliases": [
+        "/usr/share/ollama/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c"
+      ],
+      "tags": [],
+      "object": "model",
+      "created": 1788665774,
+      "owned_by": "llamacpp",
+      "meta": {
+        "vocab_type": 2,
+        "n_vocab": 248320,
+        "n_ctx": 8192,
+        "n_ctx_train": 262144,
+        "n_embd": 4096,
+        "n_params": 9197093888,
+        "size": 5669638144,
+        "ftype": "Q4_K - Medium"
+      }
+    }
+  ],
+  "server_props": {
+    "build_info": "b1-b4d6c7d8f",
+    "model_path": "/usr/share/ollama/.ollama/models/blobs/sha256-dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c",
+    "chat_template": "ssage role.') }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- else %}\n        {{- '<think>\\n' }}\n    {%- endif %}\n{%- endif %}"
+  },
+  "weights_sha256": "dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c",
+  "rendered_tail": "ATE\n2026-12-31          TODAY: 2026-09-06\n\nEVIDENCE\n(no evidence retrieved)\n\nWill this resolve YES? Answer with exactly one word, Yes or No.\nAnswer:<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "raw_top": [
+    [
+      "No",
+      0.981
+    ],
+    [
+      "Yes",
+      0.01621
+    ],
+    [
+      "Unknown",
+      0.00191
+    ],
+    [
+      " No",
+      0.00026
+    ],
+    [
+      "no",
+      0.00012
+    ],
+    [
+      "Cannot",
+      5e-05
+    ],
+    [
+      "<think>",
+      4e-05
+    ],
+    [
+      "NO",
+      3e-05
+    ],
+    [
+      "",
+      3e-05
+    ],
+    [
+      " Yes",
+      3e-05
+    ]
+  ],
+  "yes_variants_present": [
+    [
+      "Yes",
+      0.0162
+    ],
+    [
+      " Yes",
+      0.0
+    ],
+    [
+      "yes",
+      0.0
+    ]
+  ],
+  "no_variants_present": [
+    [
+      "No",
+      0.981
+    ],
+    [
+      " No",
+      0.0003
+    ],
+    [
+      "no",
+      0.0001
+    ],
+    [
+      "NO",
+      0.0
+    ]
+  ],
+  "think_tokens_in_top": [
+    "<think>"
+  ],
+  "thinking_off": false,
+  "constraint": {
+    "applied": true,
+    "top": [
+      [
+        "No",
+        0.981
+      ],
+      [
+        "Yes",
+        0.01621
+      ],
+      [
+        "Unknown",
+        0.00191
+      ],
+      [
+        " No",
+        0.00026
+      ],
+      [
+        "no",
+        0.00012
+      ],
+      [
+        "Cannot",
+        5e-05
+      ],
+      [
+        "<think>",
+        4e-05
+      ],
+      [
+        "NO",
+        3e-05
+      ],
+      [
+        "",
+        3e-05
+      ],
+      [
+        " Yes",
+        3e-05
+      ]
+    ],
+    "non_yesno_mass_reported": 0.00217,
+    "probabilities_are_pre_constraint": true
+  },
+  "trials": [
+    {
+      "q": "Will it rain in London on at least one day next week?",
+      "p_yes_raw": 0.0162,
+      "p_no_raw": 0.9814,
+      "mass": 0.9977,
+      "p_logprob": 0.0163,
+      "top1": "No"
+    },
+    {
+      "q": "Will the S&P 500 close higher next Friday than it did last F",
+      "p_yes_raw": 0.0111,
+      "p_no_raw": 0.9862,
+      "mass": 0.9974,
+      "p_logprob": 0.0112,
+      "top1": "No"
+    },
+    {
+      "q": "Will a magnitude 7.0 or greater earthquake occur anywhere on",
+      "p_yes_raw": 0.0968,
+      "p_no_raw": 0.9017,
+      "mass": 0.9985,
+      "p_logprob": 0.0969,
+      "top1": "No"
+    },
+    {
+      "q": "Will the next Nobel Prize in Physics be shared by three laur",
+      "p_yes_raw": 0.0302,
+      "p_no_raw": 0.9687,
+      "mass": 0.9989,
+      "p_logprob": 0.0303,
+      "top1": "No"
+    },
+    {
+      "q": "Will a human land on Mars before 2030?",
+      "p_yes_raw": 0.1507,
+      "p_no_raw": 0.8422,
+      "mass": 0.9929,
+      "p_logprob": 0.1518,
+      "top1": "No"
+    },
+    {
+      "q": "Will the home team win the next El Clasico?",
+      "p_yes_raw": 0.0427,
+      "p_no_raw": 0.9531,
+      "mass": 0.9958,
+      "p_logprob": 0.0428,
+      "top1": "No"
+    },
+    {
+      "q": "Will Bitcoin trade above $100,000 at any point next week?",
+      "p_yes_raw": 0.0391,
+      "p_no_raw": 0.9538,
+      "mass": 0.9929,
+      "p_logprob": 0.0394,
+      "top1": "No"
+    },
+    {
+      "q": "Will the US federal funds target range be cut at the next FO",
+      "p_yes_raw": 0.0622,
+      "p_no_raw": 0.9349,
+      "mass": 0.9972,
+      "p_logprob": 0.0624,
+      "top1": "No"
+    },
+    {
+      "q": "Will a new species of mammal be formally described next year",
+      "p_yes_raw": 0.1315,
+      "p_no_raw": 0.8534,
+      "mass": 0.9849,
+      "p_logprob": 0.1335,
+      "top1": "No"
+    },
+    {
+      "q": "Will the incumbent win the next mayoral election in Chicago?",
+      "p_yes_raw": 0.0307,
+      "p_no_raw": 0.9685,
+      "mass": 0.9991,
+      "p_logprob": 0.0307,
+      "top1": "No"
+    }
+  ],
+  "mass_min": 0.9849,
+  "mass_median": 0.9974,
+  "trials_below_floor": 0
+}

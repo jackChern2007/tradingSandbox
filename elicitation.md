@@ -161,11 +161,11 @@ the measurements.
 
 | item | value |
 |---|---|
-| stack and version | *to record* |
-| weights sha256 | *to record* |
-| thinking disabled via | *to record* |
-| rendered Call B prefix ends at `Answer:` | *yes / no* |
-| YES variants present as single tokens (token ids) | *to record* |
-| NO variants present as single tokens (token ids) | *to record* |
-| reported probabilities are pre-constraint | *yes / no, and how verified* |
-| `logprob_mass` on 10 trial questions (min / median) | *to record* |
+| stack and version | llama.cpp `llama-server`, build `b1-b4d6c7d8f` as bundled with Ollama 0.32.3, frozen copy at `/srv/projects/inference-llama/llamacpp-ollama0.32.3-b4d6c7d8f` (binary sha256 `234b05b2138264f8fb263c3205e85f4c290e8afe5067e280a4f6f90cdac5696b`), CUDA 13 backend, RTX 3070 Ti. Flags: `-ngl 99 -c 8192 -np 1 -fa on --jinja --no-webui`, no `--mmproj`. Run 2026-09-06, once. |
+| weights sha256 | `dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c` (Qwen3.5 9B, GGUF Q4_K_M, the `qwen3.5:9b` Ollama blob) |
+| thinking disabled via | request field `chat_template_kwargs.enable_thinking=false` against the GGUF-embedded Qwen3.5 Jinja template (`--jinja`); no server-side reasoning flag. The template renders an empty `<think>\n\n</think>\n\n` into the prompt. `<think>` (id 248068) still appears in the raw top-20 at p = 4e-05; `tokencheck.py` flags any think token in the top-20 and so exited 1, but the section above asks for a distribution *dominated* by Yes/No, which holds (see mass row). Accepted as the pass by Jack, 2026-09-06. |
+| rendered Call B prefix ends at `Answer:` | yes — tail `...Yes or No.\nAnswer:<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n` (the empty think block is template prompt, not generation) |
+| YES variants present as single tokens (token ids) | `Yes` 9175, `yes` 9405, `YES` 13602 (all three accepted variants are single tokens; ` Yes` 7179 also single but not in the accepted set) |
+| NO variants present as single tokens (token ids) | `No` 2665, `no` 2083, `NO` 8725 (all three accepted variants are single tokens; ` No` 2233 also single but not in the accepted set) |
+| reported probabilities are pre-constraint | yes — with the `root ::= "Yes" \| "No"` grammar applied, the returned top-20 still carries 0.0022 of mass on non-Yes/No tokens (`Unknown`, ` No`, `no`, ...), which a post-constraint distribution could not; `post_sampling_probs` left at default |
+| `logprob_mass` on 10 trial questions (min / median) | 0.9849 / 0.9974; 0 of 10 below the 0.50 floor. Full output in `tokencheck_result.json`; the earlier failed run against Ollama's own worker (`--no-jinja --chat-template chatml`, thinking on, mass 0.0) is kept as `tokencheck_result.FAILED-ollama-worker-2026-09-06.json`. |
